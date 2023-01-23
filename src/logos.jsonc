@@ -1,0 +1,6 @@
+{
+    "folder": "/favicon.ico",
+    "": "/favicon.ico", // no extension
+
+    ".html": "/favicon.ico"
+}

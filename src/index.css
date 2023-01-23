@@ -1,0 +1,15 @@
+* {
+    font-family: monospace, monospace;
+    background: #111;
+    color: #ddd;
+}
+
+img {
+    padding: 3px;
+    height: 1em;
+    align-items: baseline;
+}
+
+.file {
+    display: flex;
+}
