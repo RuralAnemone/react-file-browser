@@ -6,6 +6,7 @@ import "./index.css"
 /* // */ const logos = {
 /* // */     "folder": "/favicon.ico",
 /* // */     "": "/favicon.ico", // no extension
+/* // */     "parent": "/favicon.ico",
 
 /* // */     ".html": "/favicon.ico"
 /* // */ }
@@ -19,8 +20,12 @@ const App = () => {
     return (
         <div>
             <h1>Index of {decodeURIComponent(window.location.pathname)}</h1>
-            <br/>
             <hr/>
+            <div class="file">
+                <img src={logos["parent"]} alt="navigate to parent directory" />
+                <a href="../">parent directory</a>
+            </div>
+            <br/>
             <Files/>
         </div>
     );
@@ -28,11 +33,24 @@ const App = () => {
 
 const Files = () => {
     return (
-        <div>
-            <File path={/* get this somehow */"./index.html"} />
-            <File path="./guh" />
-            <File path="./the.file" />
-        </div>
+        <table>
+            <thead>
+                <td>Name</td>
+                <td>Size</td>
+                <td>Date Modified</td>
+            </thead>
+            <tbody>
+                <tr>
+                    <File path={/* get this somehow */"./index.html"} />
+                </tr>
+                <tr>
+                    <File path="./guh" />
+                </tr>
+                <tr>
+                    <File path="./the.file" />
+                </tr>
+            </tbody>
+        </table>
     );
 }
 
@@ -40,7 +58,7 @@ const File = (props) => {
     const extension = props.path.match(/\.\w+$/);
     let src;
     if (/* it's a folder */false) {
-        src = logos.folder;
+        src = logos["folder"];
     }
 
     if (extension in logos) {

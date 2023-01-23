@@ -5,11 +5,13 @@
 }
 
 img {
-    padding: 3px;
+    display: flex;
+    padding: 0px 3px;
     height: 1em;
     align-items: baseline;
 }
 
 .file {
     display: flex;
+    padding: 3px 0px;
 }
